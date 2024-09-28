@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="./front.js"></script>
+    <script type="text/javascript" src="jquery.qrcode.min.js"></script>
+    
+</head>
+<body>   
+<!-- MAIN (Center website) -->
+<div class="main">
+    <div class="jumbotron text-center">
+        <h1>McDonold</h1>
+    </div>
+    <!--<div class="container">-->
+        <div class="row">
+            <div class="col-sm-2" id="catagories">
+                <h3>Catagories</h3>
+                <hr>
+                <div id="myBtnContainer">
+                    <button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#catagories-list"  id="myBtnContainer" onclick="filterSelection('all')">所有餐點</button>
+                    <div id="catagories-list" class="collapse ">
+                        <a href="#" class=" btn" onclick="filterSelection('breakfast')">早餐</a>
+                        <br>
+                        <a href="#" class=" btn" onclick="filterSelection('full')">超值全餐</a>
+                        <br>
+                        <a href="#" class=" btn" onclick="filterSelection('drinks')">飲料</a>
+                        <br>
+                        <a href="#" class=" btn" onclick="filterSelection('desert')">點心</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-7" id="items">
+                <h3>Items</h3>
+                <!-- Portfolio Gallery Grid -->
+                <div class="row-item">
+                    <div class="column-item desert">
+                        <div class="content">
+                            <img src="imgs/OREO冰炫風.jfif" alt="Mountains" style="width:100%">
+                            <h4>OREO冰炫風</h4>
+                            <p>$55
+                                <br>
+                                <button onclick="add(55)">+</button>
+                                <span>0</span>
+                                <button onclick="sub(55)">-</button>                                
+                            </p>
+                        </div>
+                    </div>
+                    <div class="column-item drinks">
+                        <div class="content">
+                            <img src="imgs/冰經典卡布奇諾.jfif" alt="Lights" style="width:100%">
+                            <h4>冰經典卡布奇諾</h4>
+                            <p>$45
+                                <br>
+                                <button onclick="add(45)">+</button>
+                                <span>0</span>
+                                <button onclick="sub(45)">-</button>                                
+                            </p>
+                        </div>
+                    </div>
+                    <div class="column-item drinks">
+                        <div class="content">
+                            <img src="imgs/冰經典拿鐵.jfif" alt="Nature" style="width:100%">
+                            <h4>冰經典拿鐵</h4>
+                            <p>$40
+                                <br>
+                                <button onclick="add(40)">+</button>
+                                <span>0</span>
+                                <button onclick="sub(40)">-</button>                                
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="column-item drinks">
+                        <div class="content">
+                            <img src="imgs/冰經典美式咖啡.jfif" alt="Car" style="width:100%">
+                            <h4>冰經典美式咖啡</h4>
+                            <p>$30
+                                <br>
+                                <button onclick="add(30)">+</button>
+                                <span>0</span>
+                                <button onclick="sub(30)">-</button>                                
+                            </p>
+                        </div>
+                    </div>
+                    <div class="column-item full">
+                        <div class="content">
+                            <img src="imgs/勁辣雞腿堡.jfif" alt="Car" style="width:100%">
+                            <h4>勁辣雞腿堡</h4>
+                            <p>$80
+                                <br>
+                                <button onclick="add(80)">+</button>
+                                <span>0</span>
+                                <button onclick="sub(80)">-</button>                                
+                            </p>
+                        </div>
+                    </div>
+                    <div class="column-item full">
+                        <div class="content">
+                            <img src="imgs/大麥克.jfif" alt="Car" style="width:100%">
+                            <h4>大麥克</h4>
+                            <p>$85
+                                <br>
+                                <button onclick="add(85)">+</button>
+                                <span>0</span>
+                                <button onclick="sub(85)">-</button>                                
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="column-item full">
+                        <div class="content">
+                            <img src="imgs/嫩煎雞腿堡.jfif" alt="People" style="width:100%">
+                            <h4>嫩煎雞腿堡</h4>
+                            <p>$75
+                                <br>
+                                <button onclick="add(75)">+</button>
+                                <span>0</span>
+                                <button onclick="sub(75)">-</button>                                
+                            </p>
+                        </div>
+                    </div>
+                    <div class="column-item breakfast">
+                        <div class="content">
+                            <img src="imgs/滿福堡.jfif" alt="People" style="width:100%">
+                            <h4>滿福堡</h4>
+                            <p>$45
+                                <br>
+                                <button onclick="add(45)">+</button>
+                                <span>0</span>
+                                <button onclick="sub(45)">-</button>                                
+                            </p>
+                        </div>
+                    </div>
+                    <div class="column-item drinks">
+                        <div class="content">
+                            <img src="imgs/經典卡布奇諾.jfif" alt="People" style="width:100%">
+                            <h4>經典卡布奇諾</h4>
+                            <p>$35
+                                <br>
+                                <button onclick="add(35)">+</button>
+                                <span>0</span>
+                                <button onclick="sub(35)">-</button>                                
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-2" id="total">
+                <h3>Toal</h3>
+                <hr>
+                <div id="list"></div>
+                <hr>
+                <button onclick="pay()">結帳</button>
+                <span id="pay"></span>
+                <hr>
+                <button onclick="mclear()">重新選購</button>
+                <br><br><br><br><br><br><br><br><br><br>
+                <div id="qrcode"></div>
+            </div>
+        </div>
+    <!-- END GRID -->
+    <!--</div>-->
+
+    <!-- END MAIN -->
+</div>
+<script>
+    var sum = 0;
+    var items = [];
+    var prices = [];
+    var amounts = [];
+    var item;
+    var ip = location.host;
+    
+    /*function getIP() {
+        console.log("My public IP address is: ", json.ip);
+    }
+    getIP();*/
+    getIP();
+    function getIP(){
+        let hostname = location.hostname;
+        $('#qrcode').qrcode('http://'+hostname+'/web/pos/portfolio.html');
+        /*
+        $.post('serverIP.php',
+                {},
+                function(data){
+                    $('#qrcode').qrcode('http://192.168.0.103/web/pos/portfolio.html');
+                    console.log(data);
+                }
+        );*/ 
+    }
+    
+    function add(dollar){       
+        let msg = $(event.target).parent().prev()[0].textContent;
+        
+        let cnt = parseInt($(event.target).next()[0].textContent) + 1;
+
+        $(event.target).next()[0].textContent = cnt;
+        //console.log($(event.target).next()[0].textContent);
+
+        if(cnt == 1){
+            item = $("<p></p>").text(msg + "*" + cnt).attr("data-name", msg);
+            let price = dollar;
+            //console.log(item);
+            $("#list").append(item);
+            sum += dollar;
+            items.push(msg);
+            prices.push(dollar);
+            amounts.push(1);
+            console.log(items);
+        }else{
+            $("#list").find("p[data-name="+msg+"]").text(msg + "*" + cnt);
+            sum += dollar * (cnt-1);            
+            amounts[items.findIndex(e => e == msg)] = cnt;
+            console.log(amounts);
+        }
+        //console.log(sum);
+        
+    }
+
+    function sub(dollar){
+        let msg = $(event.target).parent().prev()[0].textContent;
+        
+        if(parseInt($(event.target).prev()[0].textContent) <= 0){
+            sum -= dollar;
+            return;
+        }
+
+        let cnt = parseInt($(event.target).prev()[0].textContent) - 1;
+
+        $(event.target).prev()[0].textContent = cnt;
+        //console.log($(".column-item span")[0].textContent);
+
+        if(cnt <= 0){
+            $("#list").find("p[data-name="+msg+"]").remove();
+        }else{
+            $("#list").find("p[data-name="+msg+"]").text(msg + "*" + cnt);
+        }
+
+        sum -= dollar;
+        //console.log(sum);
+    }
+
+    function pay(){
+        $("#total span").text('$ ' + sum);
+        upload(items, prices, amounts);
+    }
+
+    function mclear(){
+        sum = 0;
+        $("#list").find('p').remove();
+        $("#total span").text('');
+        $(".column-item span").text('0');
+        items = [];
+        prices = [];
+        amounts = [];
+    }
+
+    function upload(items, prices, amounts){
+        $.post('order.php',
+                {
+                    items: items,
+                    prices: prices,
+                    amounts: amounts
+                },
+                function(data){
+                    console.log(data);
+                }
+        ); 
+        
+    }
+</script>
+
+</body>
+</html>
